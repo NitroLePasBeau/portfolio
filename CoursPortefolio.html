@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+    <title>Site03-AutoComplete</title>
+    <meta charset="utf-8">
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <h1>Portfolio</h1>
+    <button onclick="getData()">Get Data</button>
+    <script>
+    $(document).ready(function(){
+        console.log("Ready");
+        getData();
+
+    })
+    function getData() {
+        console.log("getData");
+        $.ajax( {
+          url: "recive.php",
+          dataType: "json",
+          method:"post",
+          data: {
+
+          },
+          success: function( data ) {
+              console.log(data);
+              //console.log(data.competences);
+              //console.log(data.realisations);
+              //console.log(data.croix);
+
+              //let result=JSON.parse(data);
+              //console.log(result[0].id);
+
+
+          }
+        });
+    }
+    </script>
+</body>
